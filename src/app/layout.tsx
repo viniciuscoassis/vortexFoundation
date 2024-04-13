@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ModeToggle } from "@/components/mode-toggle";
+import { NavigationMenu } from "@radix-ui/react-navigation-menu";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,13 +20,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {/* <ModeToggle /> */}
-
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-        >{children}</ThemeProvider>
+        >
+            {children}
+         
+          </ThemeProvider>
       </body>
     </html>
   );
