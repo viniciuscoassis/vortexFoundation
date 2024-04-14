@@ -28,12 +28,11 @@ export default function Layout({ children } : {children: React.ReactNode}) {
         <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
         <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <Link
-            href="#"
-            className="flex items-center gap-2 text-lg font-semibold md:text-base"
+            href="/"
+            className="flex items-center gap-2"
           >
-            <Image src={Logo} alt="Image" width={300} height={300} className="rounded-md object-cover" />
+            <Image src={Logo} alt="Logo" className=" w-full"/>
           </Link>
-         Vortex Foundation
           <Link
             href="#"
             className="text-foreground transition-colors hover:text-foreground"
@@ -118,7 +117,7 @@ export default function Layout({ children } : {children: React.ReactNode}) {
             </nav>
           </SheetContent>
         </Sheet>
-        <div className="flex w-full items-center gap-4 md:ml-auto md:gap-4 lg:gap-4">
+        <div className="flex w-full justify-end items-center gap-4 md:ml-auto md:gap-4 lg:gap-4">
           <form className="ml-auto flex-1 sm:flex-initial">
             <div className="relative">
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
@@ -148,7 +147,7 @@ export default function Layout({ children } : {children: React.ReactNode}) {
           </DropdownMenu>
         </div>
       </header>
-        <main className="flex-1 p-4">{children}</main>
+        <main className="">{children}</main>
         <footer className="p-4 bg-gray-800 text-white text-center">
             &copy; {new Date().getFullYear()} Vortex foundation
         </footer>
