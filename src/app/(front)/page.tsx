@@ -34,32 +34,29 @@ export default function Home() {
       </p>
       </div>
 
-      <Carousel
-        opts={{ loop: true, active: true}}
-        className=" w-full max-w-xs"
-      >
-        <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index}>
+      <Carousel className="w-full " >
+      <CarouselContent className="-ml-1">
+        {Array.from({ length: 39 }).map((_, index) => (
+          <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
             <div className="p-1">
               <Card>
-                <CardContent className="flex aspect-square items-center justify-center">
+                <CardContent className="flex aspect-square items-center justify-center p-0">
                   <Image
-                    src={`/oracles/10.png`}
+                    src={`/oracles/${index}.png`}
                     alt="Oracle"
-                    layout="fill"
-                    className="w-full h-full object-cover "                    
+                    width={300}
+                    height={300}
+                    className="object-cover w-full h-full rounded-lg"
                   />
                 </CardContent>
               </Card>
             </div>
           </CarouselItem>
         ))}
-        </CarouselContent>
-        <CarouselPrevious />
+      </CarouselContent>
+      <CarouselPrevious />
       <CarouselNext />
-      </Carousel>
-
+    </Carousel>
       {/* infinite loop carousel that shows all oracles cards without stopping */}
     </section>
     </>
