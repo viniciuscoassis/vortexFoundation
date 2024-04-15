@@ -29,9 +29,9 @@ export default function Layout({ children } : {children: React.ReactNode}) {
         <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <Link
             href="/"
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 max-h-full transition-colors hover:text-foreground"
           >
-            <Image src={Logo} alt="Logo" className=" w-full"/>
+            <Image src={Logo} alt="Logo" width={180} height={180} className=""/>
           </Link>
           <Link
             href="#"
