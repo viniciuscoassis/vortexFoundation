@@ -36,8 +36,8 @@
     }
 
     .dark {
-      --background: 222.2 84% 4.9%;
-      --foreground: 210 40% 98%;
+      --background: 0 0% 0%; /* True black for dark mode */
+      --foreground: 210 40% 98%; /* Light text for contrast in dark mode */
 
       --card: 222.2 84% 4.9%;
       --card-foreground: 210 40% 98%;
