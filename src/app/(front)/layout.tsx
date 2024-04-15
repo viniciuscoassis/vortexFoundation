@@ -34,31 +34,31 @@ export default function Layout({ children } : {children: React.ReactNode}) {
             <Image src={Logo} alt="Logo" width={180} height={180} className=""/>
           </Link>
           <Link
-            href="#"
+            href="/"
             className="text-foreground transition-colors hover:text-foreground"
           >
             Home
           </Link>
           <Link
-            href="#"
+            href="/oracles"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Oracles
           </Link>
           <Link
-            href="#"
+            href="/vortex"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Vortex
           </Link>
           <Link
-            href="#"
+            href="/roadmap"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Roadmap
           </Link>
           <Link
-            href="#"
+            href="/market"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Market

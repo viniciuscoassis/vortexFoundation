@@ -36,7 +36,11 @@ export default function Home() {
       </p>
       </div>
 
-      <Carousel className="w-full z-0" >
+      <Carousel className="w-full z-0"  opts={{
+    dragFree: true,
+    active: true,
+    loop: true,
+  }} >
       <CarouselContent className="-ml-1">
         {Array.from({ length: 39 }).map((_, index) => (
           <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
@@ -46,8 +50,8 @@ export default function Home() {
                   <Image
                     src={`/oracles/${index}.png`}
                     alt="Oracle"
-                    width={300}
-                    height={300}
+                    width={200}
+                    height={200}
                     className="object-cover w-full h-full rounded-lg"
                   />
                 </CardContent>
