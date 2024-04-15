@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Web3 from 'web3';
-import { Card } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import aabi from '../../../abi/oracles.json';
 
@@ -26,6 +26,7 @@ interface Oracle {
 
 export default function Page() {
     const [oracles, setOracles] = useState<Oracle[]>([]);
+    const [oraclesLoading, setOraclesLoading] = useState<boolean>(true);
     const contractAddress = '0x4d5ea4d0a31965531146e81689c224f2929ae3e2';
     const abi = aabi;
     const fantomRpcUrl = "https://rpc.ftm.tools/"; // Example Fantom RPC URL
@@ -46,25 +47,35 @@ export default function Page() {
             const tokenCount: number = await contract.methods.totalSupply().call();
             if(tokenCount == 0) return;
 
+            let tempOracles: Oracle[] = [];
+            
             for (let i = 0; i < tokenCount; i++) {
                 const tokenURI: string = await contract.methods.tokenURI(i).call();
                 const response = await axios.get(tokenURI.replace('ipfs://', 'https://ipfs.io/ipfs/'));
-                setOracles([...oracles, response.data]);
+                tempOracles.push(response.data);
             }
+            setOraclesLoading(false);
+            setOracles(tempOracles);
 
         }
         fetchNFTData();
     }, []);
 
     return (
-        <section className="bg-gray-800 text-white grid grid-cols-1 md:grid-cols-3 gap-4 p-4 min-h-screen">
+        <section className="bg-secondary mx-auto text-white grid grid-cols-5 gap-4 p-2 min-h-screen">
             {oracles.map((oracle, index) => (
-                <Card key={index} className="bg-gray-700 p-4 rounded-lg shadow-lg">
-                    <Image src={oracle.image.replace('ipfs://', 'https://ipfs.io/ipfs/')} alt={oracle.name} width={100} height={100} className="rounded-lg"/>
-                    <h2 className="text-xl font-bold mt-2">{oracle.name}</h2>
-                    <h2 className="mt-1">{oracle.description}</h2>
-                </Card>
-            ))}
+    oracle.name !== 'Morpho_b' && (
+        <Card key={index} className="w-[350px] h-[550px] flex flex-col">
+            <CardHeader>
+                <CardTitle className="text-xl font-bold mt-2">{oracle.name}</CardTitle>
+                <CardDescription>{oracle.description}</CardDescription>
+            </CardHeader>
+            <CardContent className=' flex-grow flex items-center justify-center'>
+                <Image src={oracle.image.replace('ipfs://', 'https://ipfs.io/ipfs/')} alt={oracle.name} width={300} height={300} className="rounded-lg"/>
+            </CardContent>
+        </Card>
+    )
+))}
         </section>
     );
 }
