@@ -31,7 +31,7 @@ export default function Layout({ children } : {children: React.ReactNode}) {
             href="/"
             className="flex items-center gap-2 max-h-full transition-colors hover:text-foreground"
           >
-            <Image src={Logo} alt="Logo" width={180} height={180} className=""/>
+            <Image src={Logo} alt="Logo" width={180} height={180} />
           </Link>
           <Link
             href="/"

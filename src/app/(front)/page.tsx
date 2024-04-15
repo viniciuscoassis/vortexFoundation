@@ -8,7 +8,8 @@ export default function Home() {
   return (
     <>
    <header className="flex inset-0 min-h-screen bg-secondary flex-col items-center justify-between p-24 bg-cover bg-center"
-  style={{ backgroundImage: `url('/background.png')` }}>
+  style={{ backgroundImage: `url('/background.png')`}}
+  >
   <h1 className="text-4xl font-bold text-center text-white">
     Welcome to the Vortex foundation
   </h1>
