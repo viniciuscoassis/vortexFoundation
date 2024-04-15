@@ -1,3 +1,4 @@
+import JoinCommunity from "@/components/join-the-community";
 import { Button } from "@/components/ui/button";
 import { DiscordLogoIcon } from "@radix-ui/react-icons";
 import { Link } from "lucide-react";
@@ -28,23 +29,7 @@ export default function Page() {
           </div>
           </div>
         </div>
-        <div className="grid gap-4 mt-20 lg:mt-0">
-          <h1 className="text-4xl text-center md:text-start font-bold text-secondary-foreground"
-          >Join the community</h1>
-          <p className="text-lg text-center md:text-start text-background-foreground"
-          >For the latest news, updates and access to pre-release content.</p>
-          <div className="grid gap-4 grid-cols-1 md:grid-cols-3">
-          <Button className="bg-primary text-lg py-8 px-6 text-primary-foreground">
-            <Link href="/roadmap"> Embark on this cosmic journey.</Link>
-          </Button>
-            <Button className="bg-primary text-sm py-8 text-primary-foreground">
-              Follow us on Twitter
-            </Button>
-            <Button className="bg-primary text-sm py-8 text-primary-foreground">
-              Join the Telegram
-            </Button>
-            </div>
-        </div>
+        <JoinCommunity/>
       </section>
     )
 }
