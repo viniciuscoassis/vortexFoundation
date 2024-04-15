@@ -2,17 +2,16 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Web3 from 'web3';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
-import aabi from '../../../abi/oracles.json';
+import { Progress } from '@radix-ui/react-progress';
+import oraclesAbi from '../../../abi/oracles.json';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
-// Define an interface for the attributes of an oracle
 interface OracleAttribute {
     trait_type: string;
     value: string;
 }
 
-// Define the interface for the Oracle object
 interface Oracle {
     name: string;
     description: string;
@@ -20,62 +19,69 @@ interface Oracle {
     external_url: string;
     background_color: string;
     attributes: OracleAttribute[];
-    customImage: string;
-    customAnimationUrl: string;
 }
 
 export default function Page() {
     const [oracles, setOracles] = useState<Oracle[]>([]);
-    const [oraclesLoading, setOraclesLoading] = useState<boolean>(true);
+    const [loadingProgress, setLoadingProgress] = useState<number>(0);
+
     const contractAddress = '0x4d5ea4d0a31965531146e81689c224f2929ae3e2';
-    const abi = aabi;
-    const fantomRpcUrl = "https://rpc.ftm.tools/"; // Example Fantom RPC URL
+    const fantomRpcUrl = "https://rpc.ftm.tools/";
 
     useEffect(() => {
-        const web3 = new Web3(fantomRpcUrl);
-        const contract = new web3.eth.Contract(abi, contractAddress);
-        async function fetchNFTData() {
-            // const promises = Array.from({ length: 100 }).map((_, index) => {
-            //     return contract.methods.tokenURI(index).call().then( uri => {
-            //         uri = uri.replace('ipfs://', 'https://ipfs.io/ipfs/');
-            //         return axios.get(uri).then(res => res.data);
-            //     });
-            // });
-            // const results = await Promise.all(promises);
+        const fetchOracles = async () => {
+            const web3 = new Web3(fantomRpcUrl);
+            const contract = new web3.eth.Contract(oraclesAbi, contractAddress);
 
-            // setOracles(results);
-            const tokenCount: number = await contract.methods.totalSupply().call();
-            if(tokenCount == 0) return;
+            const tokenCount = Number(await contract.methods.totalSupply().call());
 
-            let tempOracles: Oracle[] = [];
-            
-            for (let i = 0; i < tokenCount; i++) {
-                const tokenURI: string = await contract.methods.tokenURI(i).call();
-                const response = await axios.get(tokenURI.replace('ipfs://', 'https://ipfs.io/ipfs/'));
-                tempOracles.push(response.data);
+            if (tokenCount === 0) {
+                setLoadingProgress(100);
+                return;
             }
-            setOraclesLoading(false);
-            setOracles(tempOracles);
 
-        }
-        fetchNFTData();
+            const requests = Array.from({ length: tokenCount }).map(async (_, i) => {
+                const tokenURI: any = await contract.methods.tokenURI(i).call();
+                const { data } = await axios.get(tokenURI.replace('ipfs://', 'https://ipfs.io/ipfs/'));
+                setLoadingProgress(prev => prev + (87 / tokenCount));
+                return data;
+            });
+
+            const results = await Promise.all(requests);
+            setOracles(results);
+            setLoadingProgress(100);
+        };
+
+        fetchOracles();
     }, []);
 
+    if (loadingProgress < 100) {
+        return (
+            <div className="flex flex-col items-center justify-center min-h-screen bg-secondary">
+                <h1 className="text-6xl font-bold text-secondary-foreground">
+                    Loading...
+                </h1>
+                <p className="text-lg text-secondary-foreground">
+                    {loadingProgress.toFixed(2)}%
+                </p>
+                <Progress value={loadingProgress} className="w-[60%]" />
+            </div>
+        );
+    }
+
     return (
-        <section className="bg-secondary mx-auto text-white grid grid-cols-5 gap-4 p-2 min-h-screen">
+        <section className="bg-secondary mx-auto text-white grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 p-2 min-h-screen">
             {oracles.map((oracle, index) => (
-    oracle.name !== 'Morpho_b' && (
-        <Card key={index} className="w-[350px] h-[550px] flex flex-col">
-            <CardHeader>
-                <CardTitle className="text-xl font-bold mt-2">{oracle.name}</CardTitle>
-                <CardDescription>{oracle.description}</CardDescription>
-            </CardHeader>
-            <CardContent className=' flex-grow flex items-center justify-center'>
-                <Image src={oracle.image.replace('ipfs://', 'https://ipfs.io/ipfs/')} alt={oracle.name} width={300} height={300} className="rounded-lg"/>
-            </CardContent>
-        </Card>
-    )
-))}
+                <Card key={index} className="w-full flex flex-col hover:shadow-lg transition duration-300 ease-in-out">
+                    <CardHeader className='bg-white flex flex-col items-center justify-center p-4 rounded-t-lg'>
+                        <CardTitle className="text-xl font-bold mt-2">{oracle.name}</CardTitle>
+                        <CardDescription>{oracle.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent className='flex-grow flex items-center justify-center'>
+                        <Image src={oracle.image.replace('ipfs://', 'https://ipfs.io/ipfs/')} alt={oracle.name} layout="responsive" width={400} height={400} className="rounded-lg" />
+                    </CardContent>
+                </Card>
+            ))}
         </section>
     );
 }
