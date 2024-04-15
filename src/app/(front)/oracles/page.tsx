@@ -73,7 +73,7 @@ export default function Page() {
         <section className="bg-secondary mx-auto text-white grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 p-2 min-h-screen">
             {oracles.map((oracle, index) => (
                 <Card key={index} className="w-full flex flex-col hover:shadow-lg transition duration-300 ease-in-out">
-                    <CardHeader className='bg-white flex flex-col items-center justify-center p-4 rounded-t-lg'>
+                    <CardHeader className='bg-card flex flex-col items-center justify-center p-4 rounded-t-lg'>
                         <CardTitle className="text-xl font-bold mt-2">{oracle.name}</CardTitle>
                         <CardDescription>{oracle.description}</CardDescription>
                     </CardHeader>
