@@ -18,7 +18,7 @@ export default function VortexSection() {
           />
         </div>
       </div>
-      <div className="order-2 lg:order-2 p-0 mx-auto text-center flex flex-col gap-4 lg:justify-normal xl:justify-center lg:text-sm  text-2xl xl:text-2xl uppercase">
+      <div className="max-w-full break-all order-2 lg:order-2 p-0 mx-auto text-center flex flex-col gap-4 lg:justify-normal xl:justify-center lg:text-sm  text-2xl xl:text-2xl uppercase">
         <h1 className="text-4xl font-bold text-center text-secondary-foreground">
           Tokenomics
         </h1>

@@ -6,6 +6,7 @@ import { NavigationMenu } from "@radix-ui/react-navigation-menu";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// adicionar icone do documento
 export const metadata: Metadata = {
   title: "Vortex foundation",
   description: "Embark on this cosmic journey.",
@@ -18,6 +19,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+      <link
+        rel="icon"
+        href="/logo.png"
+        type="image/png"
+        sizes="32x32"
+      />
+      </head>
       <body className={inter.className}>
         {/* <ModeToggle /> */}
         <ThemeProvider
