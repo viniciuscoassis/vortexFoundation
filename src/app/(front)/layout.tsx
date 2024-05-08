@@ -89,7 +89,7 @@ export default function Layout({ children } : {children: React.ReactNode}) {
               >
                 {/* stay in the middle */}
                 <div className="flex items-center justify-center">
-                    <Image height={100} width={200} src={Logo} alt="Logo"/>
+                    <Image height={200} width={200} src={Logo} alt="Logo"/>
                 </div>
                 <span className="sr-only">Vortex Foundation</span>
               </Link>

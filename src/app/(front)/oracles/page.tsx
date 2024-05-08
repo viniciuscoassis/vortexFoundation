@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Web3 from 'web3';
 import Image from 'next/image';
-import { Progress } from '@radix-ui/react-progress';
 import oraclesAbi from '../../../abi/oracles.json';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import useOraclesStore from '@/store/oracles';
+import { Progress } from '@/components/ui/progress';
 
 interface OracleAttribute {
     trait_type: string;
@@ -22,39 +23,13 @@ interface Oracle {
 }
 
 export default function Page() {
-    const [oracles, setOracles] = useState<Oracle[]>([]);
-    const [loadingProgress, setLoadingProgress] = useState<number>(0);
-
-    const contractAddress = '0x4d5ea4d0a31965531146e81689c224f2929ae3e2';
-    const fantomRpcUrl = "https://rpc.ftm.tools/";
+    const { oracles, loadingProgress, setOracles } = useOraclesStore();
 
     useEffect(() => {
-        const fetchOracles = async () => {
-            const web3 = new Web3(fantomRpcUrl);
-            const contract = new web3.eth.Contract(oraclesAbi, contractAddress);
-
-            const tokenCount = Number(await contract.methods.totalSupply().call());
-
-            if (tokenCount === 0) {
-                setLoadingProgress(100);
-                return;
-            }
-
-            const requests = Array.from({ length: tokenCount }).map(async (_, i) => {
-                const tokenURI: any = await contract.methods.tokenURI(i).call();
-                const { data } = await axios.get(tokenURI.replace('ipfs://', 'https://ipfs.io/ipfs/'));
-                setLoadingProgress(prev => prev + (87 / tokenCount));
-                return data;
-            });
-
-            const results = await Promise.all(requests);
-            setOracles(results);
-            setLoadingProgress(100);
-        };
-
-        fetchOracles();
-    }, []);
-
+        if(oracles.length === 0) setOracles();
+      } 
+      , [setOracles, oracles.length]);
+    
     if (loadingProgress < 100) {
         return (
             <div className="flex flex-col items-center justify-center min-h-screen bg-secondary">
