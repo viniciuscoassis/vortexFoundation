@@ -84,6 +84,7 @@ export default function Home() {
       <CarouselNext />
     </Carousel>
     </section>
+    
     <VortexSection/>
     
     <Roadmap/>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useToast } from "./ui/use-toast";
 
 export default function VortexSection() {
-  const {toast} = useToast();
+  const { toast } = useToast();
   
   return (
     <section className="flex flex-col lg:grid lg:grid-cols-2 bg-secondary inset-0 min-h-screen p-11 mx-a md:p-6 lg:p-32">
@@ -61,7 +61,7 @@ export default function VortexSection() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Ape
+                Buy on equalizer
               </a>
             </button>
         </div>

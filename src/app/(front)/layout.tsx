@@ -45,12 +45,12 @@ export default function Layout({ children } : {children: React.ReactNode}) {
           >
             Oracles
           </Link>
-          <Link
+          {/* <Link
             href="/vortex"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Vortex
-          </Link>
+          </Link> */}
           <Link
             href="/explorers"
             className="text-muted-foreground transition-colors hover:text-foreground"
@@ -102,12 +102,12 @@ export default function Layout({ children } : {children: React.ReactNode}) {
               >
                 Oracles
               </Link>
-              <Link
+              {/* <Link
                 href="/vortex"
                 className="text-muted-foreground hover:text-foreground"
               >
                 Vortex
-              </Link>
+              </Link> */}
               <Link
                 href="/explorers"
                 className="text-muted-foreground hover:text-foreground"
