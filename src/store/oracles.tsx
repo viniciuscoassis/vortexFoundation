@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { oraclesABI } from "../abi/oracles";
+import { oraclesABI } from "../data/abi/oracles";
 import axios from "axios";
 import { createPublicClient, getContract, http } from "viem";
 import { fantom } from "viem/chains";

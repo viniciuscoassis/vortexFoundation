@@ -1,7 +1,7 @@
 import { createPublicClient, getContract, http, parseAbi } from "viem";
 import { fantom } from "viem/chains";
 import { create } from "zustand";
-import {vortexABI}  from "../abi/vortex";
+import {vortexABI}  from "../data/abi/vortex";
 interface VortexStore {
     loadingProgress: number;
     totalBurned: number;
