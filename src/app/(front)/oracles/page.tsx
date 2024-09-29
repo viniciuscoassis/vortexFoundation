@@ -1,26 +1,9 @@
 "use client"
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import Web3 from 'web3';
+import { useEffect } from 'react';
 import Image from 'next/image';
-import oraclesAbi from '../../../abi/oracles.json';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import useOraclesStore from '@/store/oracles';
 import { Progress } from '@/components/ui/progress';
-
-interface OracleAttribute {
-    trait_type: string;
-    value: string;
-}
-
-interface Oracle {
-    name: string;
-    description: string;
-    image: string;
-    external_url: string;
-    background_color: string;
-    attributes: OracleAttribute[];
-}
 
 export default function Page() {
     const { oracles, loadingProgress, setOracles } = useOraclesStore();
@@ -53,7 +36,7 @@ export default function Page() {
                         <CardDescription>{oracle.description}</CardDescription>
                     </CardHeader>
                     <CardContent className='flex-grow flex items-center justify-center'>
-                        <Image src={oracle.image.replace('ipfs://', 'https://ipfs.io/ipfs/')} alt={oracle.name} layout="responsive" width={400} height={400} className="rounded-lg" />
+                        <Image src={oracle.image.replace('ipfs://', 'https://ipfs.io/ipfs/')} alt={oracle.name} width={400} height={400} className="rounded-lg" />
                     </CardContent>
                 </Card>
             ))}

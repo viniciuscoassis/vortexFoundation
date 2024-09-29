@@ -8,13 +8,19 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Switch } from "@/components/ui/switch";
 import VortexSection from "@/components/vortex-section";
 import useOraclesStore from "@/store/oracles";
+import useVortexStore from "@/store/vortex";
 import { Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { use, useEffect } from "react";
 
 export default function Home() {
   const { oracles, loadingProgress, setOracles } = useOraclesStore();
+  const { totalBurned, setBurns } = useVortexStore();
+
+  useEffect(() => {
+    if(totalBurned === 0) setBurns();
+  []});
 
   useEffect(() => {
     if(oracles.length === 0) setOracles();

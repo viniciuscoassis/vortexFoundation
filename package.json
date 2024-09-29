@@ -32,7 +32,7 @@
     "react-dom": "^18",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
-    "web3": "^4.7.0",
+    "viem": "^2.21.15",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
