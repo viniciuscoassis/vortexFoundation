@@ -3,27 +3,20 @@
 
 import { NavMenu } from "@/components/mainLayout/NavMenu"
 import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import Image from "next/image"
 import Logo from "../../../public/logo.png"
 import { ModeToggle } from "@/components/mode-toggle"
-import { Search, CircleUser, Menu } from "lucide-react"
+import { Search, Menu } from "lucide-react"
+import { ConnectButton } from "@rainbow-me/rainbowkit"
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col min-h-screen z-10">
       <header className="sticky top-0 flex h-32 items-center gap-4 border-b bg-background px-4 md:px-6 z-10">
         <nav className="hidden md:flex flex-col md:flex-row md:items-center md:gap-5 lg:gap-6">
-          <Image src={Logo} alt="Logo" width={180} height={180} />
+          <Image src={Logo} alt="Logo" width={100} height={100} />
           <NavMenu className="flex gap-6 font-medium" linkClassName="text-muted-foreground transition-colors hover:text-foreground" />
         </nav>
 
@@ -54,22 +47,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </form>
           <ModeToggle />
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="secondary" size="icon" className="rounded-full">
-                <CircleUser className="h-5 w-5" />
-                <span className="sr-only">Toggle user menu</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuItem>Support</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <ConnectButton showBalance={{ smallScreen: true, largeScreen: true }} />
         </div>
       </header>
 
