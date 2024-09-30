@@ -15,9 +15,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col min-h-screen z-10">
       <header className="sticky top-0 flex h-32 items-center gap-4 border-b bg-background px-4 md:px-6 z-10">
-        <nav className="hidden md:flex flex-col md:flex-row md:items-center md:gap-5 lg:gap-6">
+        <nav className="hidden md:flex flex-col md:flex-row md:items-center w-full md:gap-5 lg:gap-6">
           <Image src={Logo} alt="Logo" width={100} height={100} />
-          <NavMenu className="flex gap-6 font-medium" linkClassName="text-muted-foreground transition-colors hover:text-foreground" />
+          <NavMenu className="flex gap-6 w-full  font-medium" linkClassName="text-muted-foreground transition-colors hover:text-foreground" />
         </nav>
 
         <Sheet>
