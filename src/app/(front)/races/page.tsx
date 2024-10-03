@@ -10,6 +10,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
+import { Verified, VerifiedIcon } from "lucide-react";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Button } from "@/components/ui/button";
 
 export default function Page() {
   const projects = [
@@ -31,9 +34,12 @@ export default function Page() {
       backgroundImage: "",
       image: "",
       projectId: 1,
+      startTimestamp: 1727979992,
+      endTimestamp: 1729979992,
       startDate: "2024-09-28",
       endDate: "2024-10-10",
     },
+    
   ];
 
   const router = useRouter();
@@ -61,7 +67,7 @@ export default function Page() {
                 onClick={() => handleRaceClick(race.id)}
                 className="w-[350px] cursor-pointer hover:bg-muted transition"
               >
-                <CardHeader className="relative h-80 mb-10">
+                <CardHeader className="relative h-80 mb-5">
                   <Image
                     fill
                     src="/background.jpeg"
@@ -69,10 +75,16 @@ export default function Page() {
                     className="object-cover"
                   />
                 </CardHeader>
-                <CardContent className="mx-auto">
-                  <CardTitle>{race.label}</CardTitle>
-                  <CardDescription>{race.description}</CardDescription>
-                  <CardDescription>$TEX</CardDescription>
+                <CardContent className="flex flex-col justify-between h-20">
+                  <CardTitle>
+                    {race.label}
+                    <Verified className="ml-2 inline" />
+                  </CardTitle>
+                  <div className="">
+                    <Button variant="secondary">
+                     Starts in 3 days
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
