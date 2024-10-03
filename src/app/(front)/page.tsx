@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <>
       <header
-        className="flex inset-0 min-h-screen bg-secondary flex-col items-center justify-between p-36 bg-cover bg-center"
+        className="flex inset-0 min-h-screen flex-col items-center justify-between p-36 bg-cover bg-center"
         style={{ backgroundImage: `url('/background.png')` }}
       >
         <h1 className="text-4xl font-bold text-center text-white">

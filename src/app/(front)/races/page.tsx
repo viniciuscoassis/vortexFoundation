@@ -1,6 +1,15 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import Image from "next/image";
 
 export default function Page() {
   const projects = [
@@ -34,25 +43,43 @@ export default function Page() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen w-3/4 m-auto">
       <header className="py-10 text-center">
-        <h1 className="text-4xl font-bold">Tex Races</h1>
+        <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+          Tex Burn Races 🔥: Do. Or Do Not. There is no try.
+        </h1>
       </header>
       <main className="container mx-auto px-4">
         <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-5">Upcoming Races</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+            Upcoming Races
+          </h2>
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
             {races.map((race: any) => (
-              <div
+              <Card
                 key={race.id}
                 onClick={() => handleRaceClick(race.id)}
-                className="bg-gray-800 p-6 rounded-lg shadow-lg cursor-pointer hover:bg-gray-700 transition"
+                className="w-[350px] cursor-pointer hover:bg-muted transition"
               >
-                <h3 className="text-xl font-bold mb-2">{race.label}</h3>
-                <p>{race.description}</p>
-              </div>
+                <CardHeader className="relative h-80 mb-10">
+                  <Image
+                    fill
+                    src="/background.jpeg"
+                    alt="Logo"
+                    className="object-cover"
+                  />
+                </CardHeader>
+                <CardContent className="mx-auto">
+                  <CardTitle>{race.label}</CardTitle>
+                  <CardDescription>{race.description}</CardDescription>
+                  <CardDescription>$TEX</CardDescription>
+                </CardContent>
+              </Card>
             ))}
           </div>
+          <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+            Ended
+          </h2>
         </section>
       </main>
     </div>

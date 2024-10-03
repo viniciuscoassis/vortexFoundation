@@ -13,8 +13,8 @@ import { ConnectButton } from "@rainbow-me/rainbowkit"
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-col min-h-screen z-10">
-      <header className="sticky top-0 flex h-32 items-center gap-4 border-b bg-background px-4 md:px-6 z-10">
+    <div className="max-w-full flex flex-col min-h-screen z-10">
+      <header className="sticky top-0 flex h-24 items-center gap-4 bg-background/70 px-4 md:px-6 z-10">
         <nav className="hidden md:flex flex-col md:flex-row md:items-center w-full md:gap-5 lg:gap-6">
           <Image src={Logo} alt="Logo" width={100} height={100} />
           <NavMenu className="flex gap-6 w-full  font-medium" linkClassName="text-muted-foreground transition-colors hover:text-foreground" />
@@ -36,7 +36,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </Sheet>
 
         <div className="flex w-full justify-end items-center gap-4 md:ml-auto md:gap-4 lg:gap-4">
-          <form className="ml-auto flex-1 sm:flex-initial">
+          {/* <form className="ml-auto flex-1 sm:flex-initial">
             <div className="relative">
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input
@@ -45,7 +45,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 className="pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px]"
               />
             </div>
-          </form>
+          </form> */}
           <ModeToggle />
           <ConnectButton showBalance={{ smallScreen: true, largeScreen: true }} />
         </div>
