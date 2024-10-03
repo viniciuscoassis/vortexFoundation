@@ -99,7 +99,7 @@ export default function Roadmap() {
 
   return (
     <>
-      <section className="m-4 grid grid-cols-12 bg-background mb-24">
+      <section className="m-4 grid grid-cols-12 mb-24">
         <div className=" flex justify-center items-center col-start-4 col-span-6 ">
           <h1
             className="text-4xl font-bold text-secondary-foreground my-10
