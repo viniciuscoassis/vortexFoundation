@@ -118,7 +118,7 @@ const RacePage = ({ params }: { params: { raceId: string } }) => {
 
   return (
     <div className="bg-muted/40 w-full">
-      <div className="min-h-screen container  m-auto">
+      <div className="min-h-screen container w-3/4 m-auto">
         <header className="py-10">
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
             {race.label}
@@ -139,7 +139,7 @@ const RacePage = ({ params }: { params: { raceId: string } }) => {
             ))}
           </div>
           <p>{race.description}</p>
-          <div className="mt-4 flex w-3/4 justify-between">
+          <div className="mt-4 flex w-3/4 gap-4 justify-between">
             <Button variant={"secondary"} className="h-8 cursor-default">
                   <span className="text-muted-foreground mr-5">StartDate</span>
                   <span className=" font-bold">2024-10-10</span>
@@ -169,7 +169,7 @@ const RacePage = ({ params }: { params: { raceId: string } }) => {
                 </Button>
           </div>
         </header>
-        <main className="container mx-auto px-4">
+        <main className="mx-auto">
           {/* Accordion Section */}
           <section className="mb-10">
             <Accordion type="multiple" className="w-full">

@@ -1,16 +1,11 @@
 "use client";
+import Hero32 from "@/components/hero/Hero32";
 import JoinCommunity from "@/components/join-the-community";
 import Roadmap from "@/components/roadmap";
+import MainWelcomeSection from "@/components/sections/MainWelcomeSection";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -18,14 +13,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Switch } from "@/components/ui/switch";
 import VortexSection from "@/components/vortex-section";
 import useOraclesStore from "@/store/oracles";
 import useVortexStore from "@/store/vortex";
-import { Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { use, useEffect } from "react";
+import { useEffect } from "react";
 
 export default function Home() {
   const { oracles, loadingProgress, setOracles } = useOraclesStore();
@@ -42,11 +35,12 @@ export default function Home() {
 
   return (
     <>
-      <header
+      <MainWelcomeSection />
+      {/* <header
         className="flex inset-0 min-h-screen flex-col items-center justify-between p-36 bg-cover bg-center"
         style={{ backgroundImage: `url('/background.png')` }}
       >
-        <h1 className="text-4xl font-bold text-center text-white">
+        <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight text-primary-foreground lg:text-5xl">
           Welcome to the Vortex foundation
         </h1>
         <Image
@@ -56,25 +50,12 @@ export default function Home() {
           height={400}
           className="rounded-full"
         />
-        <Button className="bg-card text-lg py-8 px-6 text-card-foreground">
+        <Button variant="secondary">
           <Link href="/roadmap"> Embark on this cosmic journey.</Link>
         </Button>
-      </header>
-      <section className="flex bg-background inset-0 min-h-screen flex-col items-center justify-between p-11  md:p-24">
-        <div className="grid gap-4">
-          <h1 className="text-4xl font-bold text-center text-secondary-foreground">
-            Oracles
-          </h1>
-          <Button className="bg-primary text-lg py-8 text-primary-foreground">
-            <Link href="https://paintswap.finance/marketplace/fantom/collections/oracles">
-              Check out the marketplace
-            </Link>
-          </Button>
-          <p className="text-lg text-center text-background-foreground">
-            100 AI generated, unique oracle NFTs
-          </p>
-        </div>
-
+      </header> */}
+      <Hero32 />
+      <section className="flex inset-0 min-h-screen flex-col items-center justify-between p-11  md:p-24">
         <Carousel
           className="w-full z-0"
           opts={{
@@ -98,8 +79,8 @@ export default function Home() {
                           "https://ipfs.io/ipfs/"
                         )}
                         alt="Oracle"
-                        width={700}
-                        height={700}
+                        width={400}
+                        height={400}
                         className="object-cover w-full h-full rounded-lg"
                       />
                     </CardContent>

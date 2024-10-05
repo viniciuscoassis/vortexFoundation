@@ -22,12 +22,14 @@ interface Oracle {
 interface OraclesStore {
   oracles: Oracle[];
   loadingProgress: number;
+  totalSupply: number;
   setOracles: () => Promise<void>;
 }
 
 const useOraclesStore = create<OraclesStore>((set) => ({
   oracles: [],
   loadingProgress: 0,
+  totalSupply: 0,
   setOracles: async () => {
     const fantomRpcUrl =
       "https://fantom-mainnet.g.alchemy.com/v2/ppc64JWys0oHEL1_uU34FtWRwy64_Tq8";
@@ -44,6 +46,7 @@ const useOraclesStore = create<OraclesStore>((set) => ({
     });
 
     const tokenCount = Number(await contract.read.totalSupply());
+    set({ totalSupply: tokenCount });
 
     if (tokenCount === 0) {
       set({ loadingProgress: 100 });

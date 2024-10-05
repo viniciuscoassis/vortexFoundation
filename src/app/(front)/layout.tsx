@@ -13,7 +13,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit"
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="max-w-full flex flex-col min-h-screen z-10">
+    <div className="max-w-full flex flex-col min-h-screen z-50">
       <header className="sticky top-0 flex h-24 items-center gap-4 bg-background/70 px-4 md:px-6 z-10">
         <nav className="hidden md:flex flex-col md:flex-row md:items-center w-full md:gap-5 lg:gap-6">
           <Image src={Logo} alt="Logo" width={100} height={100} />
