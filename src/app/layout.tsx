@@ -1,9 +1,7 @@
+import { ContextProvider } from "@/context";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import { NavigationMenu } from "@radix-ui/react-navigation-menu";
-import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,25 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <link
-        rel="icon"
-        href="/logo.png"
-        type="image/png"
-        sizes="32x32"
-      />
+        <link rel="icon" href="/logo.png" type="image/png" sizes="32x32" />
       </head>
       <body className={inter.className}>
-        {/* <ModeToggle /> */}
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-            {children}
-         
-          </ThemeProvider>
-          <Toaster />
+        <ContextProvider>{children}</ContextProvider>
       </body>
     </html>
   );

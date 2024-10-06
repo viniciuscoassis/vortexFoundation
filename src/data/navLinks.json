@@ -1,0 +1,32 @@
+{
+    "mainLinks": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "Oracles",
+        "href": "/oracles"
+      },
+      {
+        "label": "Explorers",
+        "href": "/explorers"
+      },
+      {
+        "label": "Roadmap",
+        "href": "/roadmap"
+      },
+      {
+        "label": "Market",
+        "href": "/market"
+      },
+      {
+        "label": "Races 🔥",
+        "href": "/races"
+      },
+      {
+        "label": "",
+        "href": "/blog"
+      }
+    ]
+  }

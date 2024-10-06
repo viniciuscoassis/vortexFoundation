@@ -2,7 +2,7 @@ import Image from "next/image";
 import JoinCommunity from "./join-the-community";
 
 export default function ExplorerSection(){
-    return ( <section className="bg-secondary grid grid-cols-1 lg:grid-cols-3 gap-0 md:gap-12 inset-0 min-h-screen items-center justify-between py-12 px-3 lg:p-24">
+    return ( <section className="grid grid-cols-1 lg:grid-cols-3 gap-0 md:gap-12 inset-0 min-h-screen items-center justify-between py-12 px-3 lg:p-24">
     <div className="col-span-1 ">
       <Image src="/explorer.jpeg" alt="Galaxy Explorer" width={600} height={600} className="mx-auto lg:mx-0"/>
     </div>
