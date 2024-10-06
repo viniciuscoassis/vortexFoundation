@@ -45,7 +45,7 @@ export default function Page() {
   }
 
   return (
-    <section className="bg-muted/40 m-auto">
+    <section className=" m-auto">
       <header className="py-10 mx-5 md:w-3/4 md:m-auto ">
         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center">
           Oracles: Embark On A Cosmic Journey 🌀

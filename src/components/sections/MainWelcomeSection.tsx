@@ -4,7 +4,7 @@ export default function MainWelcomeSection() {
   return (
     <>
       {/* Hero */}
-      <div className="relative overflow-hidden py-24 lg:py-52">
+      <div className="relative overflow-hidden py-52">
         {/* Background Image */}
         <div 
           className="absolute inset-0 z-0"
@@ -50,8 +50,16 @@ export default function MainWelcomeSection() {
               {/* End Description */}
               {/* Buttons */}
               <div className="flex justify-center gap-4">
-                <Button size="lg">Get started</Button>
-                <Button size="lg" variant="outline">Learn more</Button>
+                <Button size="lg" asChild>
+                  <a href="https://equalizer.exchange/swap?fromToken=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&toToken=0x16e17Bf68F99DA63326677431efEB1F6FfD46eDe" target="_blank" rel="noopener noreferrer">
+                    Buy $TEX
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <a href="https://paintswap.finance/marketplace/fantom/collections/oracles" target="_blank" rel="noopener noreferrer">
+                    Buy Oracles NFT
+                  </a>
+                </Button>
               </div>
               {/* End Buttons */}
             </div>

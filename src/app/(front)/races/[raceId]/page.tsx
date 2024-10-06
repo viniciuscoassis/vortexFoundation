@@ -1,32 +1,25 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { columns } from "./columns";
-import { DataTable } from "./data-table";
-import { Input } from "@/components/ui/input";
-import { PaperPlaneIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
-import { AirplayIcon } from "lucide-react";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
+  CardTitle
 } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { PaperPlaneIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
+import { columns } from "./columns";
+import { DataTable } from "./data-table";
 
 const races = [
   {
@@ -102,6 +95,8 @@ function getData(): Leaderboard[] {
 }
 
 const RacePage = ({ params }: { params: { raceId: string } }) => {
+  const [isBlurred, setIsBlurred] = useState(true);
+  const router = useRouter();
   const raceId = params.raceId;
 
   const data = getData();
@@ -117,7 +112,16 @@ const RacePage = ({ params }: { params: { raceId: string } }) => {
     new Date(race.startDate) <= now && now <= new Date(race.endDate);
 
   return (
-    <div className="bg-muted/40 w-full">
+    <div className="bg-muted/40 w-full relative">
+      {isBlurred && (
+        <div className="absolute inset-0 backdrop-blur-md z-50 flex items-center justify-center">
+          <div className="bg-background/80 p-6 rounded-lg shadow-lg">
+            <h2 className="text-2xl font-bold mb-4">Coming Soon</h2>
+            <p className="mb-4">This page is not ready yet. Check back later!</p>
+            <Button onClick={() => router.push('/')}>Back to Safety</Button>
+          </div>
+        </div>
+      )}
       <div className="min-h-screen container w-3/4 m-auto">
         <header className="py-10">
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
