@@ -20,7 +20,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Image src={Logo} alt="Logo" width={100} height={100} />
           <NavMenu className="flex gap-6 w-full  font-medium" linkClassName="text-muted-foreground transition-colors hover:text-foreground" />
         </nav>
-
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="outline" size="icon" className="shrink-0 md:hidden">
