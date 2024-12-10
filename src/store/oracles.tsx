@@ -31,8 +31,7 @@ const useOraclesStore = create<OraclesStore>((set) => ({
   loadingProgress: 0,
   totalSupply: 0,
   setOracles: async () => {
-    const fantomRpcUrl =
-      "https://fantom-mainnet.g.alchemy.com/v2/ppc64JWys0oHEL1_uU34FtWRwy64_Tq8";
+    const fantomRpcUrl = `https://fantom-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`;
     const contractAddress = "0x4d5ea4d0a31965531146e81689c224f2929ae3e2";
     const client = createPublicClient({
       chain: fantom,
