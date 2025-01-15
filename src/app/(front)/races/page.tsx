@@ -20,7 +20,7 @@ export default function Page() {
       id: 1,
       name: "Oracles",
       description: "nft mixed with token",
-      twitter: "https://twitter.com/oracleFantom",
+      twitter: "https://x.com/vortexfdn",
       telegram: "https://t.me/oracleFantom",
     },
   ];

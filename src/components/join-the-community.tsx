@@ -20,7 +20,7 @@ export default function JoinCommunity() {
                 <div className="grid grid-cols-3">
                     {[
                         { href: "https://discord.gg/Frf25j3w", icon: DiscordLogoIcon, label: "Discord" },
-                        { href: "https://twitter.com/OracleFantom", icon: TwitterLogoIcon, label: "Twitter" },
+                        { href: "https://x.com/vortexfdn", icon: TwitterLogoIcon, label: "Twitter" },
                         { href: "https://t.me/oraclefantom", icon: PaperPlaneIcon, label: "Telegram" },
                     ].map(({ href, icon: Icon, label }) => (
                         <Link key={href} href={href}>

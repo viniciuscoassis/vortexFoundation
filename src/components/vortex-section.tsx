@@ -1,4 +1,4 @@
-import { Copy, Zap, Flame, Hash, TrendingDown, TrendingUp, ArrowRight } from "lucide-react";
+import { Copy, Zap, Flame, Hash, TrendingDown, TrendingUp, ArrowRight, Brain, Bot } from "lucide-react";
 import Image from "next/image";
 import { useToast } from "./ui/use-toast";
 
@@ -17,25 +17,25 @@ export default function VortexSection() {
               Tokenomics
             </h2>
             <p className="text-lg sm:text-xl mb-8 text-muted-foreground">
-              Discover the innovative tokenomics of $TEX, the first Vortex Foundation coin.
+              Discover the innovative tokenomics of $VORTEX, your AI-powered NFT companion.
             </p>
             <div className="space-y-4 sm:space-y-6 mb-10">
               <TokenomicsItem icon={<Zap className="w-5 h-5 sm:w-6 sm:h-6" />} text="Fair launched" />
-              <TokenomicsItem icon={<Flame className="w-5 h-5 sm:w-6 sm:h-6" />} text="LP burned" />
-              <TokenomicsItem icon={<Hash className="w-5 h-5 sm:w-6 sm:h-6" />} text="777 supply" />
-              <TokenomicsItem icon={<TrendingDown className="w-5 h-5 sm:w-6 sm:h-6" />} text="Constantly burning until it reaches 1" />
-              <TokenomicsItem icon={<TrendingUp className="w-5 h-5 sm:w-6 sm:h-6" />} text="Low cap. High potential" />
+              <TokenomicsItem icon={<Flame className="w-5 h-5 sm:w-6 sm:h-6" />} text="LP Equalizer/WAGMI(soon)" />
+              <TokenomicsItem icon={<Hash className="w-5 h-5 sm:w-6 sm:h-6" />} text="10M supply" />
+              <TokenomicsItem icon={<Bot className="w-5 h-5 sm:w-6 sm:h-6" />} text="AI NFT Trading Assistant" />
+              <TokenomicsItem icon={<TrendingUp className="w-5 h-5 sm:w-6 sm:h-6" />} text="Smart Portfolio Management" />
             </div>
             <div className="mb-8">
               <h3 className="text-xl sm:text-2xl font-semibold mb-3">Contract Address</h3>
               <div className="flex items-center space-x-2 bg-muted/50 p-3 sm:p-4 rounded-lg shadow-sm">
-                <code className="text-xs sm:text-sm flex-grow break-all">0x16e17Bf68F99DA63326677431efEB1F6FfD46eDe</code>
+                <code className="text-xs sm:text-sm flex-grow break-all">0xf316A1cB7376021ad52705c1403DF86C7A7A18d0</code>
                 <button
                   onClick={() => {
-                    navigator.clipboard.writeText("0x16e17Bf68F99DA63326677431efEB1F6FfD46eDe");
+                    navigator.clipboard.writeText("0xf316A1cB7376021ad52705c1403DF86C7A7A18d0");
                     toast({
                       title: "Contract address copied!",
-                      description: "Use it to buy $TEX on equalizer",
+                      description: "Use it to buy $VORTEX on equalizer",
                     })
                   }}
                   className="p-2 bg-background/80 hover:bg-background rounded-full transition-colors"
@@ -45,7 +45,7 @@ export default function VortexSection() {
               </div>
             </div>
             <a
-              href="https://equalizer.exchange/swap?fromToken=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&toToken=0x16e17Bf68F99DA63326677431efEB1F6FfD46eDe"
+              href="https://equalizer.exchange/swap?fromToken=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&toToken=0xf316A1cB7376021ad52705c1403DF86C7A7A18d0"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 text-base sm:text-lg font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors"

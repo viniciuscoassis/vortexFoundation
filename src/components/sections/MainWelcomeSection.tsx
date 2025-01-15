@@ -44,15 +44,14 @@ export default function MainWelcomeSection() {
               {/* End Title */}
               {/* Description */}
               <p className="text-xl text-muted-foreground mb-8">
-                Explore our slow-mint Oracles NFT collection and $TEX ecosystem. 
-                Unveil mysterious black holes and unlock a universe of opportunities.
+                Your AI-powered NFT companion. Let us guide you through the digital art world with our smart NFT curation and trading assistance.
               </p>
               {/* End Description */}
               {/* Buttons */}
               <div className="flex justify-center gap-4">
                 <Button size="lg" asChild>
-                  <a href="https://equalizer.exchange/swap?fromToken=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&toToken=0x16e17Bf68F99DA63326677431efEB1F6FfD46eDe" target="_blank" rel="noopener noreferrer">
-                    Buy $TEX
+                  <a href="https://equalizer.exchange/swap?fromToken=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&toToken=0xf316A1cB7376021ad52705c1403DF86C7A7A18d0" target="_blank" rel="noopener noreferrer">
+                    Buy $VORTEX
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
