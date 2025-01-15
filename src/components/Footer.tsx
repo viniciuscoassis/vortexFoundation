@@ -7,7 +7,7 @@ const projectInfo = {
   description: "Exploring Web3 possibilities and enriching the Fantom ecosystem since 2021.",
   socialLinks: [
     { name: "Discord", url: "https://discord.gg/Frf25j3w", icon: FaDiscord },
-    { name: "Twitter", url: "https://twitter.com/OracleFantom", icon: FaTwitter },
+    { name: "Twitter", url: "https://x.com/vortexfdn", icon: FaTwitter },
     { name: "Telegram", url: "https://t.me/oraclefantom", icon: FaTelegram },
     { name: "GitHub", url: "https://github.com/vortexfoundation", icon: FaGithub },
   ],
@@ -17,7 +17,8 @@ const projectInfo = {
       links: [
         { name: "Oracles", href: "/oracles" },
         { name: "Explorers", href: "/explorers" },
-        { name: "$TEX Token", href: "https://equalizer.exchange/swap?fromToken=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&toToken=0x16e17Bf68F99DA63326677431efEB1F6FfD46eDe" },
+        { name: "$VORTEX Token", href: "https://equalizer.exchange/swap?fromToken=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&toToken=0xf316A1cB7376021ad52705c1403DF86C7A7A18d0" },
+        { name: "Chart", href: "https://dexscreener.com/sonic/0xB8801468a4a5778a1A4F0dFBf1170258d9a8BA39" },
         { name: "Burn Races", href: "/races" },
       ],
     },

@@ -44,8 +44,7 @@ export default function MainWelcomeSection() {
               {/* End Title */}
               {/* Description */}
               <p className="text-xl text-muted-foreground mb-8">
-                Explore our slow-mint Oracles NFT collection and $TEX ecosystem. 
-                Unveil mysterious black holes and unlock a universe of opportunities.
+                Your AI-powered NFT companion. Let us guide you through the digital art world with our smart NFT curation and trading assistance.
               </p>
               {/* End Description */}
               {/* Buttons */}

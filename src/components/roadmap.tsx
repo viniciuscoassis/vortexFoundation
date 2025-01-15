@@ -1,4 +1,4 @@
-import { Check, Calendar, Rocket, Zap, Target } from "lucide-react";
+import { Check, Calendar, Rocket, Zap, Target, Bot, BarChart3, Network, Brain } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -12,85 +12,101 @@ import { Progress } from "./ui/progress";
 export default function Roadmap() {
   const roadmapCards = [
     {
-      title: "Q1 2024",
-      description: "The beginning of the journey",
-      completed: true,
-      tasks: [
-        {
-          name: "Launch of the Vortex foundation",
-          completed: true,
-        },
-        {
-          name: "Start of the Oracle collection",
-          completed: true,
-        },
-      ],
-    },
-    {
-      title: "Q2 2024",
-      description: "Vortex foundation",
+      title: "Q1 2025",
+      description: "AI Agent Launch",
       completed: false,
       tasks: [
         {
-          name: "Vortex foundation token fair launched $TEX",
+          name: "Launch of Vortex token",
           completed: true,
         },
         {
-          name: "Release website",
-          completed: true,
-        },
-        {
-          name: "$TEX burning events",
+          name: "Launch of Vortex AI NFT Assistant",
           completed: false,
         },
         {
-          name: "$TEX verified on Equalizer",
-          completed: true,
+          name: "Equalizer Full Whitelist Integration",
+          completed: false,
         },
         {
-          name: "Oracles artists collab",
+          name: "First AI-Curated NFT Collection Launch",
+          completed: false,
+        },
+        {
+          name: "Oracles Migration to Sonic Chain",
           completed: false,
         },
       ],
     },
     {
-      title: "Q3 2024",
-      description: "Burn Races 🔥",
+      title: "Q2 2025",
+      description: "Market Integration",
       completed: false,
       tasks: [
         {
-          name: "$TEX listed on CEX",
+          name: "$VORTEX Listed on WAGMI",
           completed: false,
         },
         {
-          name: "MVP available of Burn Races",
+          name: "Automated NFT Trading Bot Beta",
           completed: false,
         },
         {
-          name: "First $TEX burning event using dApp fees",
+          name: "First Automated NFT Sales",
           completed: false,
         },
         {
-          name: "Airdrops for Oracles holders",
+          name: "AI Portfolio Analytics Dashboard",
           completed: false,
         },
         {
-          name: "Revenue shares for Oracles holders",
+          name: "First Airdrop to Oracles Holders",
           completed: false,
         },
       ],
     },
     {
-      title: "Q4 2024",
-      description: "The journey continues",
+      title: "Q3 2025",
+      description: "Ecosystem Growth",
       completed: false,
       tasks: [
         {
-          name: "Expansion of the Vortex foundation",
+          name: "Multi-Chain AI Trading Support",
           completed: false,
         },
         {
-          name: "Expansion of new dApps",
+          name: "Advanced Market Prediction Features",
+          completed: false,
+        },
+        {
+          name: "NFT Rarity & Valuation AI Model",
+          completed: false,
+        },
+        {
+          name: "Community Governance Launch",
+          completed: false,
+        },
+      ],
+    },
+    {
+      title: "Q4 2025",
+      description: "Platform Evolution",
+      completed: false,
+      tasks: [
+        {
+          name: "AI-Powered NFT Creation Tools",
+          completed: false,
+        },
+        {
+          name: "Cross-Chain Portfolio Management",
+          completed: false,
+        },
+        {
+          name: "Advanced Trading Strategies Integration",
+          completed: false,
+        },
+        {
+          name: "Expansion of Vortex Ecosystem",
           completed: false,
         },
       ],
@@ -99,10 +115,10 @@ export default function Roadmap() {
 
   const getIcon = (title: string) => {
     switch (title) {
-      case "Q1 2024": return <Calendar className="h-8 w-8 text-primary" />;
-      case "Q2 2024": return <Rocket className="h-8 w-8 text-primary" />;
-      case "Q3 2024": return <Zap className="h-8 w-8 text-primary" />;
-      case "Q4 2024": return <Target className="h-8 w-8 text-primary" />;
+      case "Q1 2025": return <Bot className="h-8 w-8 text-primary" />;
+      case "Q2 2025": return <BarChart3 className="h-8 w-8 text-primary" />;
+      case "Q3 2025": return <Network className="h-8 w-8 text-primary" />;
+      case "Q4 2025": return <Brain className="h-8 w-8 text-primary" />;
       default: return null;
     }
   };
@@ -110,7 +126,7 @@ export default function Roadmap() {
   return (
     <section className="mx-auto py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-40">
       <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center mb-8 lg:mb-12 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-        Our Journey: 2024 Roadmap
+        Our Journey: 2025 Roadmap
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
         {roadmapCards.map((card, index) => {
