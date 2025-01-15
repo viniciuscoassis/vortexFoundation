@@ -50,8 +50,8 @@ export default function MainWelcomeSection() {
               {/* Buttons */}
               <div className="flex justify-center gap-4">
                 <Button size="lg" asChild>
-                  <a href="https://equalizer.exchange/swap?fromToken=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&toToken=0x16e17Bf68F99DA63326677431efEB1F6FfD46eDe" target="_blank" rel="noopener noreferrer">
-                    Buy $TEX
+                  <a href="https://equalizer.exchange/swap?fromToken=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&toToken=0xf316A1cB7376021ad52705c1403DF86C7A7A18d0" target="_blank" rel="noopener noreferrer">
+                    Buy $VORTEX
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
