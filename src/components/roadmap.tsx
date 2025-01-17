@@ -12,113 +12,118 @@ import { Progress } from "./ui/progress";
 export default function Roadmap() {
   const roadmapCards = [
     {
-      title: "Q1 2025",
-      description: "AI Agent Launch",
+      title: "Phase 1",
+      description: "Migration & Integration",
       completed: false,
       tasks: [
         {
-          name: "Launch of Vortex token",
+          name: "$VORTEX Successfully launch",
           completed: true,
         },
         {
-          name: "Launch of Vortex AI NFT Assistant",
-          completed: false,
-        },
-        {
           name: "Equalizer Full Whitelist Integration",
+          completed: true,
+        },
+        {
+          name: "Migrate Oracles to Sonic Chain",
           completed: false,
         },
         {
-          name: "First AI-Curated NFT Collection Launch",
+          name: "WAGMI LP Integration (1M Target)",
           completed: false,
         },
         {
-          name: "Oracles Migration to Sonic Chain",
+          name: "Implement TEX Claim Mechanism",
           completed: false,
         },
       ],
     },
     {
-      title: "Q2 2025",
-      description: "Market Integration",
+      title: "Phase 2",
+      description: "ArtfAI NFT Assistant MVP",
       completed: false,
       tasks: [
         {
-          name: "$VORTEX Listed on WAGMI",
+          name: "Launch Vortex AI NFT Assistant",
           completed: false,
         },
         {
-          name: "Automated NFT Trading Bot Beta",
+          name: "Oracles Revenue Share Implementation",
           completed: false,
         },
         {
-          name: "First Automated NFT Sales",
+          name: "Basic NFT Collection Analysis",
           completed: false,
         },
         {
-          name: "AI Portfolio Analytics Dashboard",
+          name: "Twitter AI Agent Integration",
           completed: false,
         },
         {
-          name: "First Airdrop to Oracles Holders",
+          name: "Telegram AI Agent Deployment",
+          completed: false,
+        },
+    
+      ],
+    },
+    {
+      title: "Phase 3",
+      description: "Advanced AI Features",
+      completed: false,
+      tasks: [
+        {
+          name: "First community collection minted with Vortex AI",
+          completed: false,
+        },
+        {
+          name: "Creator Dashboard Launch",
+          completed: false,
+        },
+        {
+          name: "{REDACTED} Project minted with Vortex AI",
+          completed: false,
+        },
+        {
+          name: "Trait Rarity Insights",
+          completed: false,
+        },
+        {
+          name: "Collection Performance Metrics",
           completed: false,
         },
       ],
     },
     {
-      title: "Q3 2025",
-      description: "Ecosystem Growth",
+      title: "Phase 4",
+      description: "NFT Ecosystem Expansion",
       completed: false,
       tasks: [
         {
-          name: "Multi-Chain AI Trading Support",
+          name: "Multi-chain Collection Support",
           completed: false,
         },
         {
-          name: "Advanced Market Prediction Features",
+          name: "AI-Powered Minting Optimization",
           completed: false,
         },
         {
-          name: "NFT Rarity & Valuation AI Model",
+          name: "Custom Trading Strategies",
           completed: false,
         },
         {
-          name: "Community Governance Launch",
+          name: "Community Governance Integration",
           completed: false,
         },
       ],
-    },
-    {
-      title: "Q4 2025",
-      description: "Platform Evolution",
-      completed: false,
-      tasks: [
-        {
-          name: "AI-Powered NFT Creation Tools",
-          completed: false,
-        },
-        {
-          name: "Cross-Chain Portfolio Management",
-          completed: false,
-        },
-        {
-          name: "Advanced Trading Strategies Integration",
-          completed: false,
-        },
-        {
-          name: "Expansion of Vortex Ecosystem",
-          completed: false,
-        },
-      ],
-    },
+    }
   ];
 
   const getIcon = (title: string) => {
     switch (title) {
-      case "Q1 2025": return <Bot className="h-8 w-8 text-primary" />;
-      case "Q2 2025": return <BarChart3 className="h-8 w-8 text-primary" />;
-      case "Q3 2025": return <Network className="h-8 w-8 text-primary" />;
-      case "Q4 2025": return <Brain className="h-8 w-8 text-primary" />;
+      case "Phase 1": return <Target className="h-8 w-8 text-primary" />;
+      case "Phase 2": return <Brain className="h-8 w-8 text-primary" />;
+      case "Phase 3": return <Bot className="h-8 w-8 text-primary" />;
+      case "Phase 4": return <Rocket className="h-8 w-8 text-primary" />;
       default: return null;
     }
   };
@@ -126,7 +131,7 @@ export default function Roadmap() {
   return (
     <section className="mx-auto py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-40">
       <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center mb-8 lg:mb-12 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-        Our Journey: 2025 Roadmap
+        Project Roadmap
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
         {roadmapCards.map((card, index) => {
@@ -134,7 +139,7 @@ export default function Roadmap() {
           const progress = (completedTasks / card.tasks.length) * 100;
 
           return (
-            <Card key={index} className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <Card key={index} className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
               <CardHeader className="flex flex-row items-center space-x-4">
                 {getIcon(card.title)}
                 <div>
@@ -142,11 +147,11 @@ export default function Roadmap() {
                   <CardDescription className="text-sm">{card.description}</CardDescription>
                 </div>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex-grow">
                 <ul className="space-y-2 text-sm">
                   {card.tasks.map((task, taskIndex) => (
                     <li key={taskIndex} className="flex items-center">
-                      <Check className={`h-5 w-5 mr-2 ${task.completed ? "text-green-500" : "text-gray-300"}`} />
+                      <Check className={`h-5 w-5 mr-2 flex-shrink-0 ${task.completed ? "text-green-500" : "text-gray-300"}`} />
                       <span className={`${task.completed ? "line-through text-gray-500" : "text-foreground"}`}>
                         {task.name}
                       </span>
@@ -154,11 +159,13 @@ export default function Roadmap() {
                   ))}
                 </ul>
               </CardContent>
-              <CardFooter className="flex flex-col space-y-2">
-                <Progress value={progress} className="w-full" />
-                <span className="text-xs sm:text-sm font-medium">
-                  {progress.toFixed(0)}% Complete
-                </span>
+              <CardFooter className="mt-auto">
+                <div className="w-full space-y-2">
+                  <Progress value={progress} className="w-full" />
+                  <span className="text-xs sm:text-sm font-medium">
+                    {progress.toFixed(0)}% Complete
+                  </span>
+                </div>
               </CardFooter>
             </Card>
           );
