@@ -131,7 +131,7 @@ export default function Roadmap() {
   return (
     <section className="mx-auto py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-40">
       <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center mb-8 lg:mb-12 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-        Project Roadmap
+      Our Journey: 2025 Roadmap
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
         {roadmapCards.map((card, index) => {
