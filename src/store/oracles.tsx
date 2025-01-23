@@ -24,9 +24,11 @@ interface OraclesStore {
   loadingProgress: number;
   totalSupply: number;
   setOracles: () => Promise<void>;
+  getOraclesBalance: (walletAddress: string) => Promise<number>;
+  tokenOfOwnerByIndex: (walletAddress: string, index: number) => Promise<number>;
 }
 
-const useOraclesStore = create<OraclesStore>((set) => ({
+const useOraclesStore = create<OraclesStore>((set, get) => ({
   oracles: [],
   loadingProgress: 0,
   totalSupply: 0,
@@ -87,6 +89,39 @@ const useOraclesStore = create<OraclesStore>((set) => ({
     set({ oracles: results });
     set({ loadingProgress: 100 });
   },
+  getOraclesBalance: async (walletAddress: string): Promise<number> => {
+    const fantomRpcUrl = `https://fantom-mainnet.g.alchemy.com/v2/ppc64JWys0oHEL1_uU34FtWRwy64_Tq8`;
+    const contractAddress = "0x4d5ea4d0a31965531146e81689c224f2929ae3e2";
+    const client = createPublicClient({
+      chain: fantom,
+      transport: http(fantomRpcUrl),
+    });
+
+    const contract = getContract({
+      address: contractAddress,
+      abi: oraclesABI,
+      client,
+    });
+
+    const oracles = await contract.read.balanceOf([walletAddress]);
+    return Number(oracles);
+  },
+  tokenOfOwnerByIndex: async (walletAddress: string, index: number) => {
+    const fantomRpcUrl = `https://fantom-mainnet.g.alchemy.com/v2/ppc64JWys0oHEL1_uU34FtWRwy64_Tq8`;
+    const contractAddress = "0x4d5ea4d0a31965531146e81689c224f2929ae3e2";
+    const client = createPublicClient({
+      chain: fantom,
+      transport: http(fantomRpcUrl),
+    });
+
+    const contract = getContract({
+      address: contractAddress,
+      abi: oraclesABI,
+      client,
+    });
+    const tokenOfOwnerByIndex = await contract.read.tokenOfOwnerByIndex([walletAddress, index]);
+    return Number(tokenOfOwnerByIndex);
+  }
 }));
 
 export default useOraclesStore;
