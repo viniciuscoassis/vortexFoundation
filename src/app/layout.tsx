@@ -17,11 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/logo.png" type="image/png" sizes="32x32" />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className}`} suppressHydrationWarning>
         <ContextProvider>{children}</ContextProvider>
       </body>
     </html>

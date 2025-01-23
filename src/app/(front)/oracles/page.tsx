@@ -28,7 +28,7 @@ export default function Page() {
 
   useEffect(() => {
     if (oracles.length === 0) setOracles();
-  }, [setOracles, oracles.length]);
+  }, []);
 
   if (loadingProgress < 100) {
     return (

@@ -117,12 +117,12 @@ const Hero32 = () => {
                   {totalSupply}/100 released, stay tuned for more!
                 </p>
                 <div className="flex gap-4 mt-4">
-                  <Button>
+                  <Button key="marketplace-button">
                     <Link href="https://paintswap.finance/marketplace/fantom/collections/oracles">
                       Marketplace
                     </Link>
                   </Button>
-                  <Button variant={"outline"} onClick={() => router.push("/oracles")}>
+                  <Button key="see-more-button" variant={"outline"} onClick={() => router.push("/oracles")}>
                     See More
                   </Button>
                 </div>
@@ -132,16 +132,18 @@ const Hero32 = () => {
           <div>
             <div className="flex flex-col gap-16 pb-8 pt-12 md:py-32">
               {integrations.map((line, i) => (
-                <div key={i} className=" flex gap-x-24 odd:-translate-x-24">
+                <div key={`line-${i}`} className="flex gap-x-24 odd:-translate-x-24">
                   {line.map((integration) => (
-                    <div
-                      key={integration.id}
-                      className="size-24 rounded-xl border border-background bg-background shadow-xl"
-                    >
-                      <div className="text-7xl flex justify-center items-center size-full bg-muted/20">
+                    integration.id ? (
+                      <div
+                        key={integration.id}
+                        className="size-24 rounded-xl border border-background bg-background shadow-xl"
+                      >
+                        <div className="text-7xl flex justify-center items-center size-full bg-muted/20">
                         🌀
+                        </div>
                       </div>
-                    </div>
+                    ) : null
                   ))}
                 </div>
               ))}
