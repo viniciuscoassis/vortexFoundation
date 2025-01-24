@@ -1,4 +1,5 @@
 "use client";
+import FeaturesSection from "@/components/features";
 import JoinCommunity from "@/components/join-the-community";
 import Roadmap from "@/components/roadmap";
 import AboutUsSection from "@/components/sections/AboutUsSection";
@@ -29,7 +30,7 @@ export default function Home() {
       <OracleInfoSection />
       <OraclesCarrousel />
       <VortexSection />
-
+      <FeaturesSection />
       <Roadmap />
       <AboutUsSection />
       <JoinCommunity />
