@@ -55,7 +55,7 @@ export default function MainWelcomeSection() {
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <a href="https://paintswap.finance/marketplace/fantom/collections/oracles" target="_blank" rel="noopener noreferrer">
+                  <a href="https://paintswap.io/sonic/collections/oracles/listings" target="_blank" rel="noopener noreferrer">
                     Buy Oracles NFT
                   </a>
                 </Button>

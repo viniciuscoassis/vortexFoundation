@@ -118,7 +118,7 @@ const Hero32 = () => {
                 </p>
                 <div className="flex gap-4 mt-4">
                   <Button key="marketplace-button">
-                    <Link href="https://paintswap.finance/marketplace/fantom/collections/oracles">
+                    <Link href="https://paintswap.io/sonic/collections/oracles/listings">
                       Marketplace
                     </Link>
                   </Button>
