@@ -37,7 +37,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         <div className="flex w-full justify-end items-center gap-4 md:ml-auto md:gap-4 lg:gap-4">
           <ModeToggle />
-          <ConnectButton showBalance={{ smallScreen: true, largeScreen: true }} />
+          <ConnectButton 
+            showBalance={{
+              smallScreen: true,
+              largeScreen: true
+            }}
+            chainStatus="icon"
+            accountStatus="avatar"
+            label="Connect Wallet"
+          />
         </div>
       </header>
 
