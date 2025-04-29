@@ -1,0 +1,11 @@
+{
+  "name": "Unrevealed Explorer",
+  "description": "This explorer's true form is still hidden in the cosmic void. Reveal it to discover its unique traits and abilities.",
+  "image": "ipfs://bafybeie7patfz745v3wyfhcbt5lx4z7div3ap573kmboqhuzae6bfdo4re",
+  "attributes": [
+    {
+      "trait_type": "Status",
+      "value": "Unrevealed"
+    }
+  ]
+} 

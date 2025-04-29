@@ -25,7 +25,7 @@ const projectInfo = {
     {
       title: "Resources",
       links: [
-        { name: "Docs", href: "/docs" },
+        { name: "Docs", href: "https://vortex-foundation.gitbook.io/vortex-ai" },
         { name: "Whitepaper", href: "/whitepaper" },
         { name: "Roadmap", href: "/roadmap" },
         { name: "FAQs", href: "/faqs" },
